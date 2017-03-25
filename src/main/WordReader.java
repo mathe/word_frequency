@@ -10,7 +10,7 @@ class WordReader{
   
   /*
     Read more words with the s scanner, this method keeps reading more words,
-    until the sum of the length of all words is less than TOTAL_NUMBER_OF_CHARS.
+    until the number of words is less than TOTAL_NUMBER_OF_CHARS.
   */
   public List<String> nextWords(Scanner s){
     String next;
