@@ -19,7 +19,7 @@ public class Main{
                                                   
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
       
-      List<Frequency> freqs = wordFreq.getCurrWordsFrequencies();
+      List<Frequency> freqs = wordFreq.getCurrWordFrequencies();
       for(Frequency f : freqs){
         System.out.println(f.getWord() + " : " + f.getFrequency());
       }
