@@ -14,7 +14,7 @@ public class Main{
   */
   public static void main(String args[]){      
     try{     
-      WordFrequency wordFreq = new WordFrequency(); 
+      WordFrequency wordFreq = new WordFrequency(new WordReader()); 
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
     }
     catch(FileNotFoundException notFound){
