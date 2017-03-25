@@ -39,4 +39,8 @@ class WordFrequency implements FileVisitor<Path>{
   public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
       return FileVisitResult.CONTINUE;
   }
+  
+  public List<Frequency> getCurrWordFrequencies() throws IOException{
+    return this.freqIncrem.getCurrFrequencies();
+  }
 } 
