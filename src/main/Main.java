@@ -16,7 +16,13 @@ public class Main{
     try{                      
       WordFrequency wordFreq = new WordFrequency(new WordReader(),
                                                   new FrequencyIncrementer()); 
+                                                  
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
+      
+      List<Frequency> freqs = wordFreq.getCurrWordsFrequencies();
+      for(Frequency f : freqs){
+        System.out.println(f.getWord() + " : " + f.getFrequency());
+      }
     }
     catch(FileNotFoundException notFound){
       System.out.println("File was not found!");
