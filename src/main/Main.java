@@ -6,15 +6,16 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Main{
+public class Main{ 
   
   /*
     args[0] = Name of the unique file, or, 
               main folder which contains all of the other files.
   */
-  public static void main(String args[]){      
-    try{     
-      WordFrequency wordFreq = new WordFrequency(new WordReader()); 
+  public static void main(String args[]){    
+    try{                      
+      WordFrequency wordFreq = new WordFrequency(new WordReader(),
+                                                  new FrequencyIncrementer()); 
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
     }
     catch(FileNotFoundException notFound){
