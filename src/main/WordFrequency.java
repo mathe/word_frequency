@@ -9,9 +9,10 @@ import java.util.ArrayList;
 
 class WordFrequency implements FileVisitor<Path>{
   private WordReader wordReader;
-  
-  public WordFrequency(WordReader wr){
+  private FrequencyIncrementer freqIncrem;
+  public WordFrequency(WordReader wr,FrequencyIncrementer fi){
     this.wordReader = wr;
+    this.freqIncrem = fi;
   }
   
   @Override
@@ -25,15 +26,12 @@ class WordFrequency implements FileVisitor<Path>{
   }
   
   @Override
-  public FileVisitResult visitFile(Path dir, BasicFileAttributes attrs) throws IOException {
-      System.out.println(dir.getFileName());
-      Scanner s = new Scanner(dir.toFile()).useDelimiter("[,.;! $ \\s]+");
-      for(List<String> words = wordReader.nextWords(s); words != null; words = wordReader.nextWords(s)){
-        for(String w : words){
-          System.out.println(w);
-        }
-      }
-      System.out.println();
+  public FileVisitResult visitFile(Path dir, BasicFileAttributes attrs) throws IOException {      
+      Scanner s = new Scanner(dir.toFile()).useDelimiter("[,.;! $ \\s /]+");      
+      for(List<String> words = wordReader.nextWords(s); words != null; words = wordReader.nextWords(s))
+        for(String w : words)
+          this.freqIncrem.incrementFrequency(w);      
+      s.close();
       return FileVisitResult.CONTINUE;
   }
   
