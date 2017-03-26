@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.io.*;
 
 class WordReader{
-  private final int TOTAL_NUMBER_OF_WORDS = 4096;
+  private final int TOTAL_NUMBER_OF_WORDS = 131072;
   
   /*
     Read more words with the s scanner, this method keeps reading more words,
