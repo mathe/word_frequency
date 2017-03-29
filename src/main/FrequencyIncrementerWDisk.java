@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+  This is not a good solution, the scanner is too slow, so we can't increment the frequency inside the file, and then close the file.
+*/
+
 class FrequencyIncrementerWDisk extends FrequencyIncrementer{
   /*
     Auxiliary directory for file criation.

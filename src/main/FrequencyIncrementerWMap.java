@@ -2,6 +2,13 @@ package main;
 
 import java.util.*;
 
+/*
+  This solution is not so good. We have just 5*10^5 words on the english vocabulary, 
+  and each word has no more than 30 letters, so if the test case contains only real words 
+  everything will fit in memory.
+  But someone can create a test with 'fake words' to break this code.
+*/
+
 class FrequencyIncrementerWMap extends FrequencyIncrementer{
   TreeMap<String,Integer> freqMap;
 
