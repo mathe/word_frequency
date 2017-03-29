@@ -15,15 +15,14 @@ public class Main{
   public static void main(String args[]){    
     try{                      
       WordFrequency wordFreq = new WordFrequency(new WordReader(),
-                                                  new FrequencyIncrementerWDisk()); 
-                                  
-      System.out.println(args[0]);
+                                                  new FrequencyIncrementerWMap()); 
+      
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
       
       List<Frequency> freqs = wordFreq.getCurrWordFrequencies();
       for(Frequency f : freqs){
         System.out.println(f.getWord() + " : " + f.getFrequency());
-      }
+      }      
     }
     catch(FileNotFoundException notFound){
       System.out.println("File was not found!");
