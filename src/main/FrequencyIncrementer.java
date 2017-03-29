@@ -2,8 +2,7 @@ package main;
 
 import java.util.List;
 
-abstract class FrequencyIncrementer{
-  protected static final String TEMP_DIR = "/home/matheus/Documents/materia/bd/word_frequency/temp_dir/";
+abstract class FrequencyIncrementer{ 
   
   public abstract void incrementFrequency(String word);
 

@@ -10,7 +10,7 @@ class FrequencyIncrementerWDisk extends FrequencyIncrementer{
   /*
     Auxiliary directory for file criation.
   */
-  
+  private static final String TEMP_DIR = "/home/matheus/Documents/materia/bd/word_frequency/temp_dir/";
   
   /*
     File for the TEMP_DIR, where the frequency of the words will be stored.
