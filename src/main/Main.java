@@ -15,8 +15,9 @@ public class Main{
   public static void main(String args[]){    
     try{                      
       WordFrequency wordFreq = new WordFrequency(new WordReader(),
-                                                  new FrequencyIncrementer()); 
-                                                  
+                                                  new FrequencyIncrementerWDisk()); 
+                                  
+      System.out.println(args[0]);
       Files.walkFileTree(Paths.get(args[0]),wordFreq);
       
       List<Frequency> freqs = wordFreq.getCurrWordFrequencies();
